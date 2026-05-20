@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Sports Meet 2026 - Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Campus Sports Meet 2026</div>
+        <div>
+            <a href="index.html">Home</a>
+        </div>
+        <div>
+            <a href="sports.html">Sports</a>
+        </div>
+        <div>
+            <a href="feedback.html">Feedback</a>
+        </div>
+        <nav>
+            <button id="themeToggle" class="btn-secondary">Toggle Dark Mode</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="booking-section">
+            <h2>Student Feedback</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="studentName">Student Name *</label>
+                    <input type="text" id="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerNo">Registration Number *</label>
+                    <input type="text" id="registerNo" placeholder="Format: REG12345" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventAttended">Event Attended *</label>
+                    <select id="eventAttended" required>
+                        <option value="">Select Event</option>
+                        <option value="Cricket (Men)">Cricket (Men)</option>
+                        <option value="Basketball (Women)">Basketball (Women)</option>
+                        <option value="100m Sprint (Athletics)">100m Sprint (Athletics)</option>
+                        <option value="Volleyball (Men)">Volleyball (Men)</option>
+                        <option value="Chess (Universal)">Chess (Universal)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating Event *</label>
+                    <select id="rating" required>
+                        <option value="">Select Rating</option>
+                        <option value="5">5 - Excellent</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="3">3 - Good</option>
+                        <option value="2">2 - Fair</option>
+                        <option value="1">1 - Poor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Comments * (Minimum 20 characters)</label>
+                    <textarea id="comments" rows="4" placeholder="Share your experience at the event..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Confirm Feedback</button>
+                <div id="formMessage" class="message"></div>
+            </form>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Feedback Dashboard</h2>
+            <div class="stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="stat-box">Total Feedback: <span id="totalCount">0</span></div>
+                <div class="stat-box" style="border-left-color: var(--success-color);">Avg Event Rating: <span id="avgRating">0.0</span> / 5</div>
+            </div>
+
+            <div class="table-responsive">
+                <table id="bookingsTable">
+                    <thead>
+                        <tr>
+                            <th>Feedback ID</th>
+                            <th>Name</th>
+                            <th>Reg Number</th>
+                            <th>Event Attended</th>
+                            <th>Rating</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Sports Meet 2026 - Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Campus Sports Meet 2026</div>
+        <div>
+            <a href="index.html">Home</a>
+        </div>
+        <div>
+            <a href="sports.html">Sports</a>
+        </div>
+        <div>
+            <a href="feedback.html">Feedback</a>
+        </div>
+        <nav>
+            <button id="themeToggle" class="btn-secondary">Toggle Dark Mode</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="booking-section">
+            <h2>Sports Participation Form</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="studentName">Student Name *</label>
+                    <input type="text" id="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerNo">Registration Number *</label>
+                    <input type="text" id="registerNo" placeholder="Format: REG12345" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email ID *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number *</label>
+                        <input type="tel" id="mobile" placeholder="10-digit number" maxlength="10" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="department">Department *</label>
+                        <select id="department" required>
+                            <option value="">Select</option>
+                            <option value="CSE">CSE</option>
+                            <option value="AIE">AIE</option>
+                            <option value="AIDS">AIDS</option>
+                            <option value="ECE">ECE</option>
+                            <option value="MECH">MECH</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="yearOfStudy">Year of Study *</label>
+                        <select id="yearOfStudy" required>
+                            <option value="">Select</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventSelect">Event Selection *</label>
+                        <select id="eventSelect" required>
+                            <option value="">Select Event</option>
+                            <option value="E001">Cricket (Men)</option>
+                            <option value="E002">Basketball (Women)</option>
+                            <option value="E003">100m Sprint (Athletics)</option>
+                            <option value="E004">Volleyball (Men)</option>
+                            <option value="E005">Chess (Universal)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="participationType">Participation Type *</label>
+                        <select id="participationType" required>
+                            <option value="">Select</option>
+                            <option value="Individual">Individual</option>
+                            <option value="Team">Team</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="teamName">Team Name (If Team)</label>
+                        <input type="text" id="teamName" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamSize">Number of Team Members</label>
+                        <input type="number" id="teamSize" min="2" max="6" disabled>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Register Entry</button>
+                <div id="formMessage" class="message"></div>
+            </form>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Events & Track Records</h2>
+            <div class="stats-container">
+                <div class="stat-box">Total Participant Entries: <span id="totalCount">0</span></div>
+            </div>
+
+            <h3>Active Event Catalog</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event ID</th>
+                            <th>Event Name</th>
+                            <th>Category</th>
+                            <th>Venue</th>
+                            <th>Fee</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="catalogTableBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Live Registration Desk</h3>
+            <div class="table-responsive">
+                <table id="bookingsTable">
+                    <thead>
+                        <tr>
+                            <th>Reg No</th>
+                            <th>Name</th>
+                            <th>Event</th>
+                            <th>Type</th>
+                            <th>Dept</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
